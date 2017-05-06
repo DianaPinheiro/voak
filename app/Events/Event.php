@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace ventureoak\Events;
 
 abstract class Event
 {

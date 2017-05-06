@@ -151,10 +151,10 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        ventureoak\Providers\AppServiceProvider::class,
+        ventureoak\Providers\AuthServiceProvider::class,
+        ventureoak\Providers\EventServiceProvider::class,
+        ventureoak\Providers\RouteServiceProvider::class,
 
     ],
 

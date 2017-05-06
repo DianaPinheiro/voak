@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace ventureoak\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

@@ -4,3 +4,6 @@
 Homestead.yaml
 Homestead.json
 .env
+.env.example
+.idea/
+Requirements.md
