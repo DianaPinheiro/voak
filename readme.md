@@ -30,29 +30,29 @@ You can use any client but Postman is recommended. A route collection for Postma
 The following endpoints are available:
 
 | Get all companies | |
------ | -------------- 
- URL | `companies`
- Method | GET
- URL Params | **Optional**
-          | | page=[integer]
-          | | limit=[integer]
-          | | example: page=3&limit=5
-  Sucess Response | **Code:** 200 - A collection of companies
-Error Response | No error response is expected
+| ----- | -------------- |
+| URL | `companies` |
+| Method | GET |
+| URL Params | **Optional** |
+|    | page=[integer] |
+|    | limit=[integer] |
+|    | example: page=3&limit=5 |
+| Sucess Response | **Code:** 200 - A collection of companies |
+| Error Response | No error response is expected |
   
   
   
   
-  | Get all reviews from a specific company | |
-  ----- | -------------- 
-   URL | `companies/:id/reviews`
-   Method | GET
-   URL Params | **Optional**
-            | | page=[integer]
-            | | limit=[integer]
-            | | example: page=3&limit=5
-    Sucess Response | **Code:** 200 - A collection of reviews from a company or a empty array if no reviews are available
-  Error Response | **Code:** 404 - No company with specified id was found
+| Get all reviews from a specific company | |
+----- | --------------
+URL | `companies/:id/reviews`
+Method | GET
+URL Params | **Optional**
+| | page=[integer]
+| | limit=[integer]
+| | example: page=3&limit=5
+Sucess Response | **Code:** 200 - A collection of reviews from a company or a empty array if no reviews are available
+Error Response | **Code:** 404 - No company with specified id was found
    
    
    
