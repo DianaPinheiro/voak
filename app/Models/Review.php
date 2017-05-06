@@ -19,22 +19,11 @@ class Review extends Model {
      */
     protected $table = 'reviews';
     public $primaryKey = 'id';
+    protected $appends = ['RatingAverage'];
 
 
     // Establishes the N:1 relationship with companies table
     public function company() {
         return $this->belongsTo('ventureoak\Models\Company', 'company_id');
     }
-
-
-    /**
-     * ACCESSOR
-     * Calculate the rating average
-     *
-     * @return boolean
-     */
-    public function ratingAverage() {
-       return ($this->rating_culture + $this->rating_management + $this->rating_work_live_balance + $this->rating_career_developmen)/4;
-    }
-
 }

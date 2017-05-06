@@ -21,6 +21,7 @@ class CreateReviewsTable extends Migration
             $table->integer('rating_management');
             $table->integer('rating_work_live_balance');
             $table->integer('rating_career_development');
+            $table->float('rating_average');
             $table->text('pro');
             $table->text('contra');
             $table->text('suggestions');

@@ -38,6 +38,7 @@ class JsonSeeder extends Seeder
                         'rating_management' => $review->rating->management,
                         'rating_work_live_balance' => $review->rating->work_live_balance,
                         'rating_career_development' => $review->rating->career_development,
+                        'rating_average' => ($review->rating->culture + $review->rating->management + $review->rating->work_live_balance + $review->rating->career_development) / 4,
                         'pro' => $review->pro,
                         'contra' => $review->contra,
                         'suggestions' => $review->suggestions,

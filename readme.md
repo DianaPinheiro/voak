@@ -1,27 +1,40 @@
-# Laravel PHP Framework
+# Venture Oak API
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+This API is implemented as a standard Laravel 5.2 project. Laravel is a web application framework with expressive, elegant syntax.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+## Requirements
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+* PHP >= 5.5.9
+* OpenSSL PHP Extension
+* PDO PHP Extension
+* Mbstring PHP Extension
+* Tokenizer PHP Extension
+* MySQL or MariaDB, any reasonably recent version will do
 
-## Official Documentation
+## Installation
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+1. Clone this repository to a local directory accessible by your Apache or NGINX web server.
+2. Import the supplied SQL script into your preferred DBMS.
+3. Configure your database access information in app/database.config
+4. Run `composer install` and wait for everything to install.
+5. [Optional] Import the supplied route collection to Postman.
 
-## Contributing
+## Usage
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+If you're running the API on a local machine the base route for the API will be similar to `http://127.0.0.1/ventureoak/public`
 
-## Security Vulnerabilities
+The following endpoints are available:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+ Method | Endpoint        | Description 
+ ------------- |  ------------- | -------------- 
+ GET | api/v1/companies | Get all companies  
+ GET | api/v1/companies/1/reviews | Get all reviews from a specific company 
+ POST | api/v1/companies/1/reviews | Create a review for a specific company
+ GET | api/v1/companies/1/reviews/minmax | Get lowest and highest review for a specific company
+ 
+ 
+ 
+    
+    
+All routes accept the ```page``` and ```limit``` parameters in order to configure the API paginator.
+    
