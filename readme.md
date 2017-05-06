@@ -21,20 +21,60 @@ This API is implemented as a standard Laravel 5.2 project. Laravel is a web appl
 
 ## Usage
 
-If you're running the API on a local machine the base route for the API will be similar to `http://127.0.0.1/ventureoak/public`
+If you're running the API on a local machine the base route for the API will be similar to `http://127.0.0.1/ventureoak/public/api/v1`
+
+You can use any client but Postman is recommended. A route collection for Postman is provided.
+
+### Endpoints
 
 The following endpoints are available:
 
- Method | Endpoint        | Description 
- ------------- |  ------------- | -------------- 
- GET | api/v1/companies | Get all companies  
- GET | api/v1/companies/1/reviews | Get all reviews from a specific company 
- POST | api/v1/companies/1/reviews | Create a review for a specific company
- GET | api/v1/companies/1/reviews/minmax | Get lowest and highest review for a specific company
- 
- 
- 
-    
-    
-All routes accept the ```page``` and ```limit``` parameters in order to configure the API paginator.
-    
+| Get all companies | |
+----- | -------------- 
+ URL | `companies`
+ Method | GET
+ URL Params | **Optional**
+          | | page=[integer]
+          | | limit=[integer]
+          | | example: page=3&limit=5
+  Sucess Response | **Code:** 200 - A collection of companies
+Error Response | No error response is expected
+  
+  
+  
+  
+  | Get all reviews from a specific company | |
+  ----- | -------------- 
+   URL | `companies/:id/reviews`
+   Method | GET
+   URL Params | **Optional**
+            | | page=[integer]
+            | | limit=[integer]
+            | | example: page=3&limit=5
+    Sucess Response | **Code:** 200 - A collection of reviews from a company or a empty array if no reviews are available
+  Error Response | **Code:** 404 - No company with specified id was found
+   
+   
+   
+   
+   | Create a review for a specific company | |
+     ----- | -------------- 
+      URL | `companies/:id/reviews`
+      Method | POST
+      URL Params | No parameters are available
+       | | Request body expects all required inputs:
+       | | title, userEmail, reviewRatingCulture, reviewRatingManagement, reviewRatingWorkLiveBalance, reviewRatingCareerDevelopment, pro, contra, suggestion
+       Sucess Response | **Code:** 201 - No content is provided
+     Error Response | **Code:** 404 - No company with specified id was found
+      | | **Code:** 422 - The request has invalid data
+      | | **Code:** 409 - The user has already provided a review for this company
+  
+  
+  | Get the lowest and highest reviews from a specific company | |
+    ----- | -------------- 
+     URL | `companies/:id/reviews/minmax`
+     Method | GET
+    Sucess Response | **Code:** 200 - A collection of reviews from a company or a empty array if no reviews are available
+    Error Response | **Code:** 404 - No company with specified id was found
+     
+         
