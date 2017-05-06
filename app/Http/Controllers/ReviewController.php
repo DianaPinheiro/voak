@@ -32,11 +32,19 @@ class ReviewController extends ApiController
      */
     public function createReviewForCompany($id, Request $request)
     {
-        // TODO: Finnish this validator
+        // Validates all data inputs
         $validator = Validator::make($request->all(), [
             'title' => 'required|string|max:255',
-            'body' => 'required'
+            'userEmail' => 'required|email',
+            'reviewRatingCulture' => 'required|integer',
+            'reviewRatingManagement' => 'required|integer',
+            'reviewRatingWorkLiveBalance' => 'required|integer',
+            'reviewRatingCareerDevelopment' => 'required|integer',
+            'pro' => 'required|string',
+            'contra' => 'required|string',
+            'suggestions' => 'required|string'
         ]);
+
         if ($validator->fails()) {
             return $this
                 ->setStatusCode(IlluminateResponse::HTTP_UNPROCESSABLE_ENTITY)
