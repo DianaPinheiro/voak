@@ -1,0 +1,201 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Diana",
+		"_postman_id": "dca58cf3-2b65-9d93-7fc9-5d31c65950b7",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all companies",
+			"request": {
+				"url": "http://127.0.0.1/ventureoak/public/api/v1/companies",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get reviews of a company",
+			"request": {
+				"url": "http://127.0.0.1/ventureoak/public/api/v1/companies/1/reviews",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create review for a company",
+			"request": {
+				"url": "http://127.0.0.1/ventureoak/public/api/v1/companies/1/reviews",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Lorem ipsum dolor sit amet",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "userEmail",
+							"value": "xpto@venture.pt",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "reviewRatingCulture",
+							"value": "5",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "reviewRatingManagement",
+							"value": "8",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "reviewRatingWorkLiveBalance",
+							"value": "6",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "reviewRatingCareerDevelopment",
+							"value": "9",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "pro",
+							"value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nisi tellus, accumsan at arcu id, venenatis accumsan enim. Etiam elementum metus sem, quis tincidunt elit scelerisque eu. Fusce hendrerit laoreet vulputate. Integer sit amet ex consectetur ligula vehicula placerat.",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "contra",
+							"value": "Donec faucibus, dui vel faucibus tincidunt, leo orci tristique diam, at consectetur leo libero et libero. Integer pellentesque viverra lacus, at efficitur augue fringilla nec",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "suggestions",
+							"value": "Morbi dignissim justo vitae posuere tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elit ipsum, efficitur nec nisi vitae, hendrerit mollis mi. Morbi efficitur blandit luctus.",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get lowest and highest review for a company",
+			"request": {
+				"url": "http://127.0.0.1/ventureoak/public/api/v1/companies/1/reviews/minmax",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get companies (paginated)",
+			"request": {
+				"url": "http://127.0.0.1/ventureoak/public/api/v1/companies?page=2",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get companies (paginated and limited)",
+			"request": {
+				"url": "http://127.0.0.1/ventureoak/public/api/v1/companies?limit=3&page=3",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get reviews of company (paginated)",
+			"request": {
+				"url": "http://127.0.0.1/ventureoak/public/api/v1/companies/1/reviews?page=2",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get reviews of companies (paginated and limited)",
+			"request": {
+				"url": "http://127.0.0.1/ventureoak/public/api/v1/companies/1/reviews?page=2&limit=2",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get reviews of non existing company",
+			"request": {
+				"url": "http://127.0.0.1/ventureoak/public/api/v1/companies/0/reviews",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create review with invalid inputs",
+			"request": {
+				"url": "http://127.0.0.1/ventureoak/public/api/v1/companies/1/reviews",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Xpto",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "userEmail",
+							"value": "invalidemail",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "reviewRatingCulture",
+							"value": "4",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
